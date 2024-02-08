@@ -8,56 +8,12 @@ export default function ProjectCardList() {
     const [projects, setProjects] = useState<ProjectCardProps[]>();
 
     useEffect(() => {
-        setProjects([
-            {
-                title: "Project 1",
-                description: "Project 1 description",
-                id: "1",
-                image: "https://www.kushiphotos.com/_next/image?url=https%3A%2F%2Ffiles.stripe.com%2Flinks%2FMDB8YWNjdF8xTXRjSXdLUUthaGFFR1hXfGZsX3Rlc3RfQUJTekhkQkJtbUVkUW96VDhlQ2RHOUhC00YglQPaFz&w=1080&q=75"
-            },
-            {
-                title: "Project 1",
-                description: "Project 1 description",
-                id: "1",
-                image: "https://www.kushiphotos.com/_next/image?url=https%3A%2F%2Ffiles.stripe.com%2Flinks%2FMDB8YWNjdF8xTXRjSXdLUUthaGFFR1hXfGZsX3Rlc3RfQUJTekhkQkJtbUVkUW96VDhlQ2RHOUhC00YglQPaFz&w=1080&q=75"
-            },
-            {
-                title: "Project 1",
-                description: "Project 1 description",
-                id: "1",
-                image: "https://www.kushiphotos.com/_next/image?url=https%3A%2F%2Ffiles.stripe.com%2Flinks%2FMDB8YWNjdF8xTXRjSXdLUUthaGFFR1hXfGZsX3Rlc3RfQUJTekhkQkJtbUVkUW96VDhlQ2RHOUhC00YglQPaFz&w=1080&q=75"
-            },
-            {
-                title: "Project 1",
-                description: "Project 1 description",
-                id: "1",
-                image: "https://www.kushiphotos.com/_next/image?url=https%3A%2F%2Ffiles.stripe.com%2Flinks%2FMDB8YWNjdF8xTXRjSXdLUUthaGFFR1hXfGZsX3Rlc3RfQUJTekhkQkJtbUVkUW96VDhlQ2RHOUhC00YglQPaFz&w=1080&q=75"
-            },
-            {
-                title: "Project 1",
-                description: "Project 1 description",
-                id: "1",
-                image: "https://www.kushiphotos.com/_next/image?url=https%3A%2F%2Ffiles.stripe.com%2Flinks%2FMDB8YWNjdF8xTXRjSXdLUUthaGFFR1hXfGZsX3Rlc3RfQUJTekhkQkJtbUVkUW96VDhlQ2RHOUhC00YglQPaFz&w=1080&q=75"
-            },
-            {
-                title: "Project 1",
-                description: "Project 1 description",
-                id: "1",
-                image: "https://www.kushiphotos.com/_next/image?url=https%3A%2F%2Ffiles.stripe.com%2Flinks%2FMDB8YWNjdF8xTXRjSXdLUUthaGFFR1hXfGZsX3Rlc3RfQUJTekhkQkJtbUVkUW96VDhlQ2RHOUhC00YglQPaFz&w=1080&q=75"
-            },
-            {
-                title: "Project 1",
-                description: "Project 1 description",
-                id: "1",
-                image: "https://www.kushiphotos.com/_next/image?url=https%3A%2F%2Ffiles.stripe.com%2Flinks%2FMDB8YWNjdF8xTXRjSXdLUUthaGFFR1hXfGZsX3Rlc3RfQUJTekhkQkJtbUVkUW96VDhlQ2RHOUhC00YglQPaFz&w=1080&q=75"
-            },
-            {
-                title: "Project 1",
-                description: "Project 1 description",
-                id: "1",
-                image: "https://www.kushiphotos.com/_next/image?url=https%3A%2F%2Ffiles.stripe.com%2Flinks%2FMDB8YWNjdF8xTXRjSXdLUUthaGFFR1hXfGZsX3Rlc3RfQUJTekhkQkJtbUVkUW96VDhlQ2RHOUhC00YglQPaFz&w=1080&q=75"
-            },
-        ])
+        const getProjectDetail = async () => {
+            const resp = await fetch(`/home/project_detail.json`)
+            const respJson = await resp.json()
+            setProjects(respJson.projects)
+        }
+        getProjectDetail()
     })
 
     return (

@@ -3,7 +3,7 @@ import Image from "next/image";
 export type ProjectCardProps = {
     title: string;
     description: string;
-    image: string;
+    imageUrl: string;
     id: string;
 }
 
@@ -15,7 +15,7 @@ export default function ProjectCard(props: ProjectCardProps) {
     
     return(
         <div className="w-full pl-4 pr-4 mb-9">
-            <img src={props.image} alt="image" className="w-full hover:cursor-pointer object-cover transition-transform duration-300 transform hover:scale-110" onClick={onImageClick} />
+            <img src={props.imageUrl} alt="image" className="w-full hover:cursor-pointer object-cover transition-transform duration-300 transform hover:scale-110" onClick={onImageClick} />
             <div className="w-full mt-4">
                 <div className="flex justify-start">
                     <div className="font-extralight text-lg">{props.title}</div>

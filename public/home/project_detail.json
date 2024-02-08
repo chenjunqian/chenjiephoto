@@ -1,0 +1,34 @@
+{
+    "projects": [
+        {
+            "id": "toxic-colors",
+            "title": "Toxic Colors",
+            "description": "Some colors are brightly alive, while some mean dead silence.",
+            "imageUrl": "https://i.ibb.co/6JcmyQ1/2.jpg"
+        },
+        {
+            "id": "violent-deaths",
+            "title": "Violent Deaths",
+            "description": "The day you wasted today is the tomorrow that someone who died yesterday so badly wished for.",
+            "imageUrl": "https://i.ibb.co/8srnngc/2-1.png"
+        },
+        {
+            "id": "soil-for-survival",
+            "title": "Soil for Survival",
+            "description": "The light shineth in darkness, and the darkness comprehended it not.",
+            "imageUrl": "https://i.ibb.co/cyg0JHh/3-36.jpg"
+        },
+        {
+            "id": "vacuous-truth",
+            "title": "Vacuous Truth",
+            "description": "Nothing is an absolute reality; all is permitted.",
+            "imageUrl": "https://i.ibb.co/f9prNZQ/4-2.png"
+        },
+        {
+            "id": "little-big-worlds",
+            "title": "Little Big Worlds",
+            "description": "Great music has the faintest notes. The great form is without shape.",
+            "imageUrl": "https://i.ibb.co/T47kFfM/5-1.jpg"
+        }
+    ]
+}
