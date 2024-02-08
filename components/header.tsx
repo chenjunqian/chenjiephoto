@@ -16,7 +16,7 @@ export default function Header() {
                 </div>
             </div>
             <div className="navbar-center">
-                <a className="btn btn-ghost text-xl" href="/">Chen Jie photo</a>
+                <a className="text-xl" href="/">Chen Jie photo</a>
             </div>
             <div className="navbar-end">
             </div>
