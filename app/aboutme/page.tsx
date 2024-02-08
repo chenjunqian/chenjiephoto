@@ -34,7 +34,7 @@ export default function AboutMe() {
                     <div className="w-full mt-16">
                         {
                             imageItems && imageItems.map((imageItem, index) => (
-                                <div key={index} className="w-full pl-4 pr-4 mb-9">
+                                <div key={index} className="w-full mb-9">
                                     <img src={imageItem.imageUrl} alt="image" className="w-full hover:cursor-pointer object-cover" />
                                     <div className="w-full mt-4">
                                         <div className="flex justify-start">
