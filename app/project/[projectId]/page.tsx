@@ -1,28 +1,15 @@
-'use client'
-
+import { ProjectCardProps } from "@/components/ProjectCard";
 import Header from "@/components/header";
-import { ImageItemDetail } from "@/types/image_item";
-import { useEffect, useState } from "react";
+import { promises as fs } from 'fs';
 
-
-export default function Project({ params }: { params: { projectId: string } }) {
+export default async function Project({ params }: { params: { projectId: string } }) {
 
     const projectId = params.projectId
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [imageItems, setImageItems] = useState<ImageItemDetail[]>();
-
-    useEffect(() => {
-        const getProjectDetail = async () => {
-            const resp = await fetch(`/project-resources/${projectId}/project_detail.json`)
-            const respJson = await resp.json()
-            console.log(respJson)
-            setTitle(respJson.title)
-            setDescription(respJson.description)
-            setImageItems(respJson.imageItems)
-        }
-        getProjectDetail()
-    }, [params.projectId])
+    const file = await fs.readFile(process.cwd() + `/public/project-resources/${projectId}/project_detail.json`, 'utf8');
+    const respJson = JSON.parse(file);
+    const title = respJson.title
+    const description = respJson.description
+    const imageItems: ProjectCardProps[] = respJson.imageItems
 
     return (
         <div className="w-full">
