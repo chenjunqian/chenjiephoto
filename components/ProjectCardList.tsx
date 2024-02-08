@@ -1,20 +1,10 @@
-'use client'
-import { useEffect, useState } from "react"
-import ProjectCard, { ProjectCardProps } from "./ProjectCard";
+import ProjectCard from "./ProjectCard";
+import project_detail from "../public/home/project_detail.json"
 
 
 export default function ProjectCardList() {
 
-    const [projects, setProjects] = useState<ProjectCardProps[]>();
-
-    useEffect(() => {
-        const getProjectDetail = async () => {
-            const resp = await fetch(`/home/project_detail.json`)
-            const respJson = await resp.json()
-            setProjects(respJson.projects)
-        }
-        getProjectDetail()
-    })
+    const projects = project_detail.projects
 
     return (
         <div className="w-full flex justify-center pl-6 pr-6 pt-28">

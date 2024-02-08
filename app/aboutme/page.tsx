@@ -1,28 +1,13 @@
-'use client'
 
 import Header from "@/components/header";
-import { ImageItemDetail } from "@/types/image_item";
-import { useEffect, useState } from "react";
+import project_detail from "@/public/aboutme/project_detail.json"
 
 
 export default function AboutMe() {
 
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [imageItems, setImageItems] = useState<ImageItemDetail[]>();
-
-
-    useEffect(() => {
-
-        const getProjectDetail = async () => {
-            const resp = await fetch(`/aboutme/project_detail.json`)
-            const respJson = await resp.json()
-            setTitle(respJson.title)
-            setDescription(respJson.description)
-            setImageItems(respJson.imageItems)
-        }
-        getProjectDetail()
-    }, [])
+    const title = project_detail.title
+    const description = project_detail.description
+    const imageItems = project_detail.imageItems
 
     return (
         <div className="w-full">
