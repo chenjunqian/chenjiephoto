@@ -16,6 +16,10 @@ export default function AboutMe() {
                 <div className="w-full max-w-6xl">
                     <div className="font-bold text-2xl max-w-xl">{title}</div>
                     <div className="font-thin text-base mt-9" dangerouslySetInnerHTML={{ __html: description }}></div>
+                    <div className="mt-6">
+                        <div>Contact Me</div>
+                        Email:  <a className="font-bold underline" href="mailto:zjfzjf66@vip.sina.com">zjfzjf66@vip.sina.com</a>
+                    </div>
                     <div className="w-full mt-16">
                         {
                             imageItems && imageItems.map((imageItem, index) => (
