@@ -22,6 +22,10 @@
 
 ## 用图床的链接来更新网站图片
 
+在项目页面<https://github.com/chenjunqian/chenjiephoto>，首先点击分支按钮，如下图为`main`, 在点击`dev`，我们要先切换到开发分支，再更新内容
+
+![branch](docs/github-pr-1.jpg)
+
 网站的数据定义在`public`文件夹下
 
 ![data definition](docs/data-definition-1.jpg)
@@ -58,3 +62,33 @@
 ![project detail](docs/data-definition-6.jpg)
 
 对于其他页面也是一样
+
+## 部署网站
+
+更新好内容后，点击`Pull request`按钮
+
+![pull request](docs/github-pr-2.jpg)
+
+在点击 `New pull request` 按钮
+
+![pr1](docs/github-pr-3.jpg)
+
+选择从`dev`分支更新到`main`分支
+
+![pr2](docs/github-pr-4.jpg)
+
+![pr3](docs/github-pr-5.jpg)
+
+填写title，然后点击`Create pull request`按钮
+
+![pr4](docs/github-pr-6.jpg)
+
+等待所有检查标记为绿色后，再点击`Merge pull request`按钮
+
+![pr5](docs/github-pr-7.jpg)
+
+再点击`Confirm merge`
+
+![pr6](docs/github-pr-8.jpg)
+
+这时，再等待大概1分钟，刷新<https://chenjiephoto.vercel.app/> 就可以看到更新的内容了。
