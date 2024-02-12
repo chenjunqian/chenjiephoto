@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 如何更新网站内容
 
-## Getting Started
+## 图床
 
-First, run the development server:
+这里以 [imgbb](https://imgbb.com/) 为图床为例子（可以自己注册一个账号）， 上传图片后，获取到图片的链接。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+上传图片完成后，点击下图的按钮(红色标记)
+
+![get image link](docs/img-hosting-1.jpg)
+
+点击后会出现弹窗
+
+![embed code](docs/img-hosting-2.jpg)
+
+选择HTML image
+
+![html image](docs/img-hosting-3.jpg)
+
+红色方框内的链接就可以用于网站图片展示
+
+![image link](docs/img-hosting-4.jpg)
+
+## 用图床的链接来更新网站图片
+
+网站的数据定义在`public`文件夹下
+
+![data definition](docs/data-definition-1.jpg)
+
+在`public`文件夹下，有`home`， `aboutme`和`project-resource`， 分别对应主页，关于我和项目详情三个页面
+
+![data definition](docs/data-definition-2.jpg)
+
+在每个文件夹下会有个`project_detail.json`文件，用于定义网页上显示的内容，下图为主页内容定义的实例，`project`字段表示主页展示的项目，例如第一个为**Toxic Colors**，`id` `toxic-colors`对应的为项目页面的链接，比如项目**Toxic Colors**的链接为<https://chenjiephoto.vercel.app/project/toxic-colors>，同时也是对应`project-resources`文件夹下项目详情对应的文件，`title`为项目标题，`description`为项目描述，`imageUrl`为项目图片，图片的链接就是上面上传到图床后，获取的链接（其他的任何`imageUrl`字段同理）。
+
+![json def file](docs/data-definition-3.jpg)
+
+对比网站首页显示的内容
+
+![home page](docs/data-definition-4.jpg)
+
+对应的`id`，如下图，`toxic-colors` 对应`project-resources`文件夹的内容定义文件位置，如有新的项目，可以创建新的`json`文件，例如有新的摄影作品叫新世界 New World，这时就可以在`home`文件下的`project_detail.json` 中的`projects`后追加一个
+
+```json
+{
+    "id": "new-world",
+    "title": "New World",
+    "description": "New world example description",
+    "imageUrl": "https://i.ibb.co/T47kFfM/5-1.jpg"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+同时在`project-resource`文件夹下，创建一个文件夹名为`new-world`，和`project_detail.json`文件（内容结构和其他`project-reousrces`下的一致），`title`为项目标题，`description`为项目描述，`imageItems`为图片列表。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![id](docs/data-definition-5.jpg)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+对比项目具体详情页面
 
-## Learn More
+![project detail](docs/data-definition-6.jpg)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+对于其他页面也是一样
